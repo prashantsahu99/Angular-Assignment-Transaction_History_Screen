@@ -13,6 +13,7 @@ export class TransactionScreenComponent implements OnInit {
 
   constructor(private transactionservice : TransactionServiceService) {
     this.transaction = this.transactionservice.getAllTranscation();
+    this.transaction.sort((a: any, b: any) => (a.date <b.date ? -1: 1));
     this.details=this.transactionservice.getUserDetails();
    }
 

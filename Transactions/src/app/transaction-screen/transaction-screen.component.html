@@ -1,5 +1,8 @@
 <div class="container-fluid w-50">
+
     <h2 class="text-center">Transaction History Screen</h2>
+
+
     <div class="row p-1 border border-dark">
         <div class="col-1"><img src="../../assets/images/left-arrow.png" class="arrow"></div>
         <div class="col-1 image_A"><img src="../../assets/images/A-image.png" class="Aimage"></div>
@@ -8,4 +11,93 @@
             <div class="row phone">{{"+91 "+details.mobile_no}}</div>
         </div>
     </div>
+
+
+    <div class="row border border-dark main mb-4">
+        <div *ngFor="let item of transaction" class=" w-50  m-3 ">
+            
+            <!-- condition-1 -->
+            <ng-container *ngIf="item.transcationType==='pay'&& item.transactionDirect==='sent'">
+                <div class="row border border-dark " >
+                    <div class="row">
+                        <div class=" col-6 card-view"> <span class="rupee">₹</span> {{item.amount}}</div>
+                        <div class="col-6 mt-3  message"><i class="fa fa-check text-success pt-1 "></i> You paid</div>
+                    </div>
+                    <div class="row m-1 p-0">
+                        <div class="col-10">
+                            <div class="row trId m-0">Transaction ID</div>
+                            <div class="row trId m-0">{{item.transcationId}}</div>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-angle-right icon"></i>
+                        </div>
+                    </div>
+                </div>    
+            </ng-container>
+
+
+            <!-- condition-2 -->
+            <ng-container *ngIf="item.transcationType==='collect' && item.transactionDirect==='sent'">
+                <div class="row border border-dark " >
+                    <div class="row">
+                        <div class=" col-6 card-view"> <span class="rupee">₹</span> {{item.amount}}</div>
+                        <div class="col-6 mt-3  message"><i class="fa fa-link pt-1 "></i> You requested</div>
+                    </div>
+                    <div class="row m-1 p-0">
+                        <div class="col-10">
+                            <button class="rounded">Cancel</button>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-angle-right icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+            <!-- condition-3 -->
+            <ng-container *ngIf="item.transcationType==='collect' && item.transactionDirect==='received'">
+                <div class="row border border-dark " >
+                    <div class="row">
+                        <div class=" col-6 card-view"> <span class="rupee">₹</span> {{item.amount}}</div>
+                        <div class="col-6 mt-3  message"><i class="fa fa-link pt-1 "></i> Request Received</div>
+                    </div>
+                    <div class="row m-1 p-0">
+                        <div class="col-10">
+                            <button class="m-1 rounded">Pay</button><button class="m-1 rounded">Decline</button>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-angle-right icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+            <!-- condition-4 -->
+            <ng-container *ngIf="item.transcationType==='pay' && item.transactionDirect==='received'">
+                <div class="row border border-dark " >
+                    <div class="row">
+                        <div class=" col-6 card-view"> <span class="rupee">₹</span> {{item.amount}}</div>
+                        <div class="col-6 mt-3  message"><i class="fa fa-check text-success pt-1 "></i> You received</div>
+                    </div>
+                    <div class="row m-1 p-0">
+                        <div class="col-10">
+                            <div class="row trId m-0">Transaction ID</div>
+                            <div class="row trId m-0">{{item.transcationId}}</div>
+                        </div>
+                        <div class="col">
+                            <i class="fa fa-angle-right icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            
+            <!-- Date and Time -->
+            <div class="row date">{{item.date | date:'d MMM y, h:mm a'}}</div>
+        </div>
+    </div>
+
+
+
 </div>
