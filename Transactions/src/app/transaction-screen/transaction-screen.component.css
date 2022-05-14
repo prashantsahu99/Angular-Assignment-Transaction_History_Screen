@@ -1,3 +1,4 @@
+
 .row{
     padding: 0%;
     margin: 0%;
@@ -9,11 +10,12 @@
 .Aimage{
     width: 45px;
     height: 45px;
-    margin-left: 2%;
+    margin-left: 15%;
 }
 
 .image_A{
     width: 70px;
+    margin-right: -2%;
 }
 .phone{
     font-size: 12px;
@@ -35,7 +37,7 @@
 
 .rupee{
     font-size: 25px;
-    
+    font-family:'Times New Roman', Times, serif;
 }
 
 
@@ -53,6 +55,7 @@
     font-size: 12px;
     float: right;
     margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 

@@ -6,7 +6,7 @@
     <div class="row p-1 border border-dark">
         <div class="col-1"><img src="../../assets/images/left-arrow.png" class="arrow"></div>
         <div class="col-1 image_A"><img src="../../assets/images/A-image.png" class="Aimage"></div>
-        <div class="col-3">
+        <div class="col-9">
             <div class="row admin">{{details.username}}</div>
             <div class="row phone">{{"+91 "+details.mobile_no}}</div>
         </div>
@@ -18,7 +18,9 @@
             <div class="dashed" *ngIf="i===0 || transaction[i].date.toString() !== transaction[i-1].date.toString()" [class.mt-3]="i===0">
                 <span>{{item.date | date:'d-MMM-YYYY'}}</span>
             </div>
-            <div [class.float-end]="item.transactionDirect==='sent'" class=" w-50 ">
+            <div [class.float-end]="item.transactionDirect==='sent'" class=" w-50 "
+                 [class.mt-3]="i!=0 && transaction[i].date.toString() === transaction[i-1].date.toString()"
+                 [class.mb-5]="i===transaction.length -1">
         
                 <!-- condition-1 -->
                 <ng-container *ngIf="item.transcationType==='pay'&& item.transactionDirect==='sent'">
