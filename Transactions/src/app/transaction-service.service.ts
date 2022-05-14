@@ -32,18 +32,18 @@ export class TransactionServiceService {
         "transcationId":"AI39856329105660"
       },
       {
-        "transcationType":"collect",
-        "transactionDirect":"received",
-        "amount":"2000",
-        "date":new Date("2022-11-19"),
-        "transcationId":"AI39856329105679"
-      },
-      {
         "transcationType":"pay",
         "transactionDirect":"received",
         "amount":"500",
         "date":new Date("2022-11-19"),
         "transcationId":"AI39856329105721"
+      },
+      {
+        "transcationType":"collect",
+        "transactionDirect":"received",
+        "amount":"2000",
+        "date":new Date("2022-11-19"),
+        "transcationId":"AI39856329105679"
       }
     ]
   }

@@ -1,3 +1,4 @@
+import { transition } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { TransactionServiceService } from '../transaction-service.service';
 
@@ -10,6 +11,7 @@ export class TransactionScreenComponent implements OnInit {
 
   transaction :any=[];
   details:any={};
+
 
   constructor(private transactionservice : TransactionServiceService) {
     this.transaction = this.transactionservice.getAllTranscation();
