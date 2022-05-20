@@ -44,6 +44,13 @@ export class TransactionServiceService {
         "amount":"2000",
         "date":new Date("2022-11-19"),
         "transcationId":"AI39856329105679"
+      },
+      {
+        "transcationType":"pay",
+        "transactionDirect":"sent",
+        "amount":"2000",
+        "date":new Date("2022-11-10"),
+        "transcationId":"AI39856329105679"
       }
     ]
   }
